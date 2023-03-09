@@ -1,0 +1,19 @@
+<div class="border-bottom row" style="padding: 10px;">
+    <div class="col-10">
+        <h4>{{component["Salon"]}}</h4>
+        <div>
+            <b>Tipo:</b> {{component["Equipo"]}}
+        </div>
+        <div>
+            <b>Marca:</b> {{component["Marca"]}}
+        </div>
+        {% if "CPU" in component %}
+        <div>
+            <b>CPU: </b>{{component["CPU"]}}
+        </div>
+        {% endif %}
+    </div>
+    <div class="col-2">
+        <button type="button" class="btn btn-outline-primary">Editar</button>
+    </div>
+</div>

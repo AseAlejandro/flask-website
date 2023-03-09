@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pagina web</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <style>
+            /* h1 {
+                font-size: 40px;
+                font-family: Roboto;
+                font-weight: normal;
+                color: rgb(0, 255, 0);
+                text-align: center;
+            } */
+            /* #banner {
+                width: 100%;
+                height: 720px;
+                object-fit: cover;
+            }
+
+            h2 {
+                font-family: Roboto;
+                font-weight: normal;
+                color: rgb(0, 255, 0);
+            }
+
+            p {
+                font-family: Roboto;
+            } */
+
+            /* #container {
+                max-width: 720px;
+                margin: 0 auto 0 auto;
+            } */
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <h1>Main idea</h1>
+        <img id="banner"src="https://files.parquefundidora.org/images/19e975a57f423eb025fb3a8f3eea242e-lg" alt="Lagartera" class="img-fluid">
+        <!-- <img src="C:\Users\ASEAl\OneDrive\Documentos\Proyectos\Web Page Parque\Imagenes\Esculturas\EcoSerpiente.jfif"> -->
+        <h2>About</h2>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h2>Open Positions</h2>
+        <p class="lead">Lista de opciones</p>
+        <div>
+            {% for component in computers %}
+                {% include 'for.html' %}
+            {% endfor %}
+        </div>
+        <div style="text-align: center;">
+            <button class="btn btn-primary btn-lg">Contactanos</button>
+            <p class="mt-4">Copyright</p>
+        </div>
+        </div>
+    </body>
+</html>
