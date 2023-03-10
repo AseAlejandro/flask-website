@@ -1,6 +1,7 @@
 from flask import Flask, render_template, jsonify
 from sqlalchemy import create_engine, text
 from keyss import connection_string
+from database import hitDB, hitUniqueDB
 
 app = Flask(__name__)
 
@@ -53,26 +54,25 @@ engine = create_engine(connection_string,
 #     }
 # ]
 
-def hitDB():
-    with engine.connect() as conn:
-        result = conn.execute(text("Select * from arqui.computadoras"))
-
-        Computers = [dict(data._mapping) for data in result]
-
-        return Computers    
-
-
-
 @app.route("/")
 def HelloWorld():
     Computers = hitDB()
     return render_template("home.html", computers=Computers)
 
-@app.route("/jobs")
+@app.route("/computers")
 def listJobs():
     Computers = hitDB()
     return jsonify(Computers)
 
+@app.route("/computer/<id>")
+def showComputer(id):
+    computer = hitUniqueDB(id)
+    if not computer:
+        return "Not Found", 404
+    computer = computer[0]
+
+    # return jsonify(computer)
+    return render_template("objects.html", computers = computer)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)
