@@ -1,7 +1,6 @@
 from sqlalchemy import create_engine, text
-from keyss import connection_string
 
-
+connection_string = os.environ['connection_string']
 engine = create_engine(connection_string,
                        connect_args={
                             "ssl": {
